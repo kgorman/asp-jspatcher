@@ -1,7 +1,7 @@
 const { validateJavaScript, injectFunction, processFiles } = require('./asp-jspatcher.js');
 const fs = require('fs');
 
-console.log('🧪 Running tests for asp-inject...\n');
+console.log('🧪 Running tests for asp-jspatcher...\n');
 
 // Test 1: JavaScript validation
 console.log('Test 1: JavaScript validation');

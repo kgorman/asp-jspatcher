@@ -119,10 +119,10 @@ function parseArgs() {
   
   if (args.length < 2 || args.includes('--help') || args.includes('-h')) {
     console.log(`
-asp-inject - Inject validated JavaScript into ASP pipeline definitions
+asp-jspatcher - Inject validated JavaScript into ASP pipeline definitions
 
 Usage:
-  asp-inject <json-file> <js-file> [options]
+  asp-jspatcher <json-file> <js-file> [options]
 
 Arguments:
   json-file    Path to the ASP pipeline JSON file
@@ -134,9 +134,9 @@ Options:
   -h, --help             Show this help message
 
 Examples:
-  asp-inject pipeline.json function.js
-  asp-inject pipeline.json function.js -o output.json
-  asp-inject pipeline.json function.js -k "%%CUSTOM%%" -o result.json
+  asp-jspatcher pipeline.json function.js
+  asp-jspatcher pipeline.json function.js -o output.json
+  asp-jspatcher pipeline.json function.js -k "%%CUSTOM%%" -o result.json
 `);
     process.exit(0);
   }

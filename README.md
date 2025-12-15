@@ -1,4 +1,4 @@
-# asp-inject
+# asp-jspatcher
 
 A CLI tool for validating JavaScript files and injecting them into MongoDB Atlas Stream Processing pipeline definitions.
 
@@ -34,8 +34,8 @@ chmod +x asp-jspatcher.js
 # Link globally for system-wide access
 npm link
 
-# Now you can use 'asp-inject' from anywhere
-asp-inject pipeline.json function.js -o output.json
+# Now you can use 'asp-jspatcher' from anywhere
+asp-jspatcher pipeline.json function.js -o output.json
 ```
 
 ## Quick Example
@@ -55,7 +55,7 @@ This takes a template pipeline with a `$$FUNCTION` placeholder and replaces it w
 ## Usage
 
 ```bash
-asp-inject <json-file> <js-file> [options]
+asp-jspatcher <json-file> <js-file> [options]
 
 Arguments:
   json-file    Path to the ASP pipeline JSON file with $$FUNCTION placeholder
@@ -79,7 +79,7 @@ Options:
 ./asp-jspatcher.js examples/solar-boost-template.json examples/solar-boost.js -o output.json
 
 # If globally installed
-asp-inject examples/solar-boost-template.json examples/solar-boost.js -o output.json
+asp-jspatcher examples/solar-boost-template.json examples/solar-boost.js -o output.json
 ```
 
 ### Solar Panel Example
@@ -139,7 +139,7 @@ The `$$FUNCTION` placeholder is replaced with the validated JavaScript function,
 
 ```bash
 # Use a custom placeholder keyword
-asp-inject pipeline.json function.js -k "%%MY_FUNCTION%%" -o result.json
+asp-jspatcher pipeline.json function.js -k "%%MY_FUNCTION%%" -o result.json
 ```
 
 ## File Structure
