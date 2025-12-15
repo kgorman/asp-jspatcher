@@ -1,0 +1,25 @@
+{
+  "name": "asp-inject",
+  "version": "1.0.0",
+  "description": "A CLI tool for validating JavaScript files and injecting them into MongoDB Atlas Stream Processing pipeline definitions",
+  "main": "asp-jspatcher.js",
+  "bin": {
+    "asp-inject": "./asp-jspatcher.js"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "mongodb",
+    "atlas",
+    "stream-processing",
+    "cli",
+    "javascript",
+    "validation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "solar_watts_boost_processor",
+    "pipeline": [
+        {
+            "$source": {
+                "connectionName": "sample_stream_solar",
+                "timeField": { "$dateFromString": { "dateString": "$timestamp" }}
+            }
+        },
+        {
+            "$addFields": {
+                "boosted_watts": {
+                    "$function": {
+                        "body": "function(watts) {\n  // Boost solar panel output by 20%\n  return watts * 1.2;\n}",
+                        "args": ["$obs.watts"],
+                        "lang": "js"
+                    }
+                }
+            }
+        },
+        {
+            "$merge": {
+                "into": {
+                    "connectionName": "Cluster01",
+                    "db": "test",
+                    "coll": "function_test"
+                }
+            }
+        }
+    ]
+}

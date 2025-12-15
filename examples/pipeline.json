@@ -1,0 +1,29 @@
+{
+  "name": "example-pipeline",
+  "description": "Sample ASP pipeline with JavaScript injection",
+  "pipeline": [
+    {
+      "$match": {
+        "status": "active"
+      }
+    },
+    {
+      "$addFields": {
+        "processedData": {
+          "$function": {
+            "body": "$$FUNCTION",
+            "args": ["$data", "$timestamp"],
+            "lang": "js"
+          }
+        }
+      }
+    },
+    {
+      "$out": {
+        "connectionName": "output-connection",
+        "db": "processed",
+        "coll": "results"
+      }
+    }
+  ]
+}
